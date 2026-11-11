@@ -71,6 +71,11 @@
           <article class="card card--<%= a[:status] %>">
             <div class="card__image">
               <span class="card__emoji" aria-hidden="true"><%= a[:emoji] %></span>
+              <% if a[:photo] %>
+                <%= image_tag photo_url(a[:photo]), alt: a[:title], class: "card__photo", loading: "lazy", decoding: "async" %>
+                <%= link_to "ภาพ: #{photo_credit(a[:photo])}", photo_page_url(a[:photo]),
+                      class: "card__credit", target: "_blank", rel: "noopener" %>
+              <% end %>
               <span class="badge badge--<%= a[:status] %>"><%= AuctionsController::STATUSES[a[:status]] %></span>
               <span class="countdown <%= 'countdown--urgent' if closing_soon?(a) %>">⏱ <%= time_left_label(a) %></span>
             </div>

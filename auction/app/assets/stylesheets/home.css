@@ -1,14 +1,15 @@
 :root {
-  --bg: #0f1424;
-  --bg-2: #1a2140;
-  --text: #f4f1ea;
-  --muted: #a9b0c7;
-  --gold: #f5b942;
-  --rose: #ef6f8b;
-  --teal: #3cc6b4;
-  --violet: #8b7cf6;
-  --card: rgba(255, 255, 255, 0.06);
-  --card-border: rgba(255, 255, 255, 0.12);
+  /* Purple & gold theme */
+  --bg: #120a24;
+  --bg-2: #261447;
+  --text: #f7f2ff;
+  --muted: #b8acd6;
+  --gold: #f5c84c;
+  --rose: #d4962b;   /* deep gold, end of gold gradients */
+  --teal: #b794f6;   /* light purple accent */
+  --violet: #7c4dff;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(245, 200, 76, 0.18);
 }
 
 * { box-sizing: border-box; }
@@ -19,8 +20,8 @@ body {
   font-family: "Kanit", system-ui, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 15% 10%, rgba(245, 185, 66, 0.18), transparent 40%),
-    radial-gradient(circle at 85% 90%, rgba(60, 198, 180, 0.15), transparent 45%),
+    radial-gradient(circle at 15% 10%, rgba(245, 200, 76, 0.16), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(124, 77, 255, 0.28), transparent 50%),
     linear-gradient(160deg, var(--bg), var(--bg-2));
 }
 

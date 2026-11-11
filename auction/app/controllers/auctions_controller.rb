@@ -55,21 +55,22 @@ class AuctionsController < ApplicationController
 
   private
 
+  # Photos are real product photos from Wikimedia Commons (credits in AuctionsHelper::PHOTO_CREDITS).
   def mock_auctions
     now = Time.current.beginning_of_hour
     [
-      { title: "กล้องฟิล์ม Nikon FM2",        type: "English",  product: "กล้อง",     emoji: "📷", price: 4_500,  start_at: now - 2.days,  stop_at: now + 5.hours },
-      { title: "นาฬิกา Seiko 5 วินเทจ",       type: "English",  product: "นาฬิกา",    emoji: "⌚", price: 3_200,  start_at: now - 1.day,   stop_at: now + 1.day },
-      { title: "กีตาร์โปร่ง Yamaha F310",     type: "Dutch",    product: "เครื่องดนตรี", emoji: "🎸", price: 2_800,  start_at: now - 3.hours, stop_at: now + 2.days },
-      { title: "จักรยานไฮบริด มือสอง",         type: "English",  product: "กีฬา",      emoji: "🚲", price: 6_900,  start_at: now + 1.day,   stop_at: now + 4.days },
-      { title: "แผ่นเสียง The Beatles ชุดแรก", type: "Sealed",   product: "ของสะสม",   emoji: "💿", price: 12_000, start_at: now + 2.days,  stop_at: now + 6.days },
-      { title: "พระเครื่องเก่า (มีใบรับรอง)",   type: "English",  product: "ของสะสม",   emoji: "🪷", price: 25_000, start_at: now - 5.days,  stop_at: now - 1.day },
-      { title: "iPad Air รุ่น 5 สภาพดี",       type: "English",  product: "ไอที",      emoji: "📱", price: 9_500,  start_at: now - 6.hours, stop_at: now + 10.hours },
-      { title: "โต๊ะไม้สักโบราณ",              type: "Dutch",    product: "เฟอร์นิเจอร์", emoji: "🪑", price: 18_000, start_at: now - 7.days,  stop_at: now - 2.days },
-      { title: "ภาพวาดสีน้ำมัน ทิวทัศน์",       type: "Sealed",   product: "ศิลปะ",     emoji: "🖼️", price: 7_700,  start_at: now + 3.hours, stop_at: now + 3.days },
-      { title: "หูฟังมือสอง สภาพดี",          type: "English",  product: "ไอที",      emoji: "🎧", price: 850,    start_at: now - 4.hours, stop_at: now + 8.hours },
-      { title: "MacBook Pro M3 14 นิ้ว",       type: "English",  product: "ไอที",      emoji: "💻", price: 62_000, start_at: now - 1.day,   stop_at: now + 2.days },
-      { title: "รถมอเตอร์ไซค์คลาสสิก",         type: "Sealed",   product: "ยานพาหนะ",  emoji: "🏍️", price: 145_000, start_at: now + 1.day,  stop_at: now + 7.days }
+      { title: "กล้องฟิล์ม Nikon FM2",        type: "English",  product: "กล้อง",     photo: "Nikon_FM2_in_black.jpg", emoji: "📷", price: 4_500,  start_at: now - 2.days,  stop_at: now + 5.hours },
+      { title: "นาฬิกา Seiko 5 วินเทจ",       type: "English",  product: "นาฬิกา",    photo: "Vintage_Seiko_5_Men's_Automatic_(Self-Winding)_Wristwatch,_Day-Date,_Made_In_Japan_(15871131175).jpg", emoji: "⌚", price: 3_200,  start_at: now - 1.day,   stop_at: now + 1.day },
+      { title: "กีตาร์โปร่ง Yamaha F310",     type: "Dutch",    product: "เครื่องดนตรี", photo: "Yamaha_F310.jpg", emoji: "🎸", price: 2_800,  start_at: now - 3.hours, stop_at: now + 2.days },
+      { title: "จักรยานไฮบริด มือสอง",         type: "English",  product: "กีฬา",      photo: "Trek_7200_(2008).JPG", emoji: "🚲", price: 6_900,  start_at: now + 1.day,   stop_at: now + 4.days },
+      { title: "แผ่นเสียง The Beatles ชุดแรก", type: "Sealed",   product: "ของสะสม",   photo: "Vinilos_distintos_tamaños.jpg", emoji: "💿", price: 12_000, start_at: now + 2.days,  stop_at: now + 6.days },
+      { title: "พระเครื่องเก่า (มีใบรับรอง)",   type: "English",  product: "ของสะสม",   photo: "Thai_buddhist_amulets.jpg", emoji: "🪷", price: 25_000, start_at: now - 5.days,  stop_at: now - 1.day },
+      { title: "iPad Air รุ่น 5 สภาพดี",       type: "English",  product: "ไอที",      photo: "IPad_Air_4.png", emoji: "📱", price: 9_500,  start_at: now - 6.hours, stop_at: now + 10.hours },
+      { title: "โต๊ะไม้สักโบราณ",              type: "Dutch",    product: "เฟอร์นิเจอร์", photo: "Antique_table_(26274842252).jpg", emoji: "🪑", price: 18_000, start_at: now - 7.days,  stop_at: now - 2.days },
+      { title: "ภาพวาดสีน้ำมัน ทิวทัศน์",       type: "Sealed",   product: "ศิลปะ",     photo: "Winter_Landscape_with_Brabrand_Church.jpg", emoji: "🖼️", price: 7_700,  start_at: now + 3.hours, stop_at: now + 3.days },
+      { title: "หูฟังมือสอง สภาพดี",          type: "English",  product: "ไอที",      photo: "Słuchawki_referencyjne_K-701_firmy_AKG.jpg", emoji: "🎧", price: 850,    start_at: now - 4.hours, stop_at: now + 8.hours },
+      { title: "MacBook Pro M3 14 นิ้ว",       type: "English",  product: "ไอที",      photo: "M3_Macbook_Pro_14_inch_Space_Grey_model_(cropped).jpg", emoji: "💻", price: 62_000, start_at: now - 1.day,   stop_at: now + 2.days },
+      { title: "รถมอเตอร์ไซค์คลาสสิก",         type: "Sealed",   product: "ยานพาหนะ",  photo: "Royal_Enfield_Bullet_500_-_2002_model.jpg", emoji: "🏍️", price: 145_000, start_at: now + 1.day,  stop_at: now + 7.days }
     ].each_with_index.map do |a, i|
       status =
         if now < a[:start_at] then "upcoming"
